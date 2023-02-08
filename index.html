@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shooting Game in Virtual Reality</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="Shoot.js"></script>
+    
+    
+  </head>
+  <body>
+    <a-scene id="scene">
+
+      <!--Assets-->
+      <a-assets>
+        <a-asset-item
+        id="shooter"
+        src="./models/shooter/gun.gltf">
+      </a-asset-item>
+
+      <a-asset-item
+      id="pin"
+      src="./models/bowling_pin/scene.gltf">
+    </a-asset-item>
+      </a-assets>
+      
+      <!--Light-->
+      <a-entity light="type: ambient; color: white; intensity:0.5"></a-entity>
+
+      <!--Camera and Cursor-->
+      <a-entity
+        id="camera"
+        camera
+        position="0 1.6 0"
+        wasd-controls
+        look-controls="pointerLockEnabled: false"        
+      >
+      <a-entity
+      id="weapon"
+      gltf-model="#shooter"
+      position="0 -4.4 3"
+      rotation="0 180 0"
+      scale="0.35 1 1"
+      >
+      </a-entity> 
+
+
+        <a-cursor></a-cursor>        
+      </a-entity>
+
+      <!--Background-->
+      <a-sky src="https://l13.alamy.com/360/2H7DNHB/friends-playing-bowling-in-a-colorful-bowling-bar-2H7DNHB.jpg" rotation="0 -90 0">
+      </a-sky>
+      
+      <!--Bullets-->
+      <a-entity bullets></a-entity>
+
+      <!--Ground
+      <a-plane
+        id="ground"
+        repeat="5 5"
+        position="0 1 0"
+        rotation="-90 0 0"
+        height="200"
+        width="200"
+        color="#FBF2D4"
+        static-body
+        visible="true"
+      >
+      </a-plane>-->
+
+      <!--pins-->
+
+      <a-entity
+        id="pin1"
+        gltf-model="#pin"
+        position="0 1.5 -2"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#pin"
+        id="pin2"
+        position="-0.07 1.5 -2.05"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#pin"
+        id="pin3"
+        position="0.07 1.5 -2.05"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#pin"
+        id="pin4"
+        position="0.14 1.5 -2.1"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#pin"
+        id="pin5"
+        position="-0.14 1.5 -2.1"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#pin"
+        id="pin6"
+        position="0 1.5 -2.1"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#pin"
+        id="pin7"
+        position="0.21 1.5 -2.15"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#pin"
+        id="pin8"
+        position="-0.21 1.5 -2.15"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#pin"
+        id="pin9"
+        position="-0.07 1.5 -2.15"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#pin"
+        id="pin10"
+        position="0.07 1.5 -2.15"
+        rotation="0 180 0"
+        scale="1 1 1"
+        dynamic-body
+      ></a-entity>
+
+      <!--Bowling Lane-->
+
+      <a-plane
+        position="0 1.1 0"
+        rotation="-90 0 0"
+        height="200"
+        width="5"
+        src="https://media.istockphoto.com/id/1255972670/pt/vetorial/bowling-street-wooden-floor-bowling-alley-background.jpg?s=612x612&w=0&k=20&c=a_QBUT6JbnXCTefB30obzZkupazsCZD8Wn2Y3TAb1lM="
+        static-body
+        visible="true"
+      >
+      </a-plane>
+
+    </a-scene>
+  </body>
+</html>
